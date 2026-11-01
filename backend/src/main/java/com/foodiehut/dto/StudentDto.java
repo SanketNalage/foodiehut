@@ -52,3 +52,4 @@ public class StudentDto {
     public String getQrCodeData() { return qrCodeData; }
     public void setQrCodeData(String qrCodeData) { this.qrCodeData = qrCodeData; }
 }
+

@@ -295,3 +295,4 @@ export const CanteenDashboard: React.FC = () => {
     </div>
   );
 };
+

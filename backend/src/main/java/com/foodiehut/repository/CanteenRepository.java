@@ -16,3 +16,4 @@ public interface CanteenRepository extends JpaRepository<Canteen, Long> {
     boolean existsByCanteenCode(String canteenCode);
     List<Canteen> findByActiveTrue();
 }
+

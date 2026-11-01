@@ -79,3 +79,4 @@ export const api = {
     request<Order>('/orders', { method: 'POST', body: JSON.stringify(data) }),
   getOrderById: (orderId: number) => request<Order>(`/orders/${orderId}`),
 };
+

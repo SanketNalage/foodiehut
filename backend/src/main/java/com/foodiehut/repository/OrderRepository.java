@@ -23,3 +23,4 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     long countByCanteenIdAndStatus(Long canteenId, OrderStatus status);
 }
+

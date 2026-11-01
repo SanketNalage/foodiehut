@@ -245,3 +245,4 @@ export const StudentRegister: React.FC = () => {
     </div>
   );
 };
+

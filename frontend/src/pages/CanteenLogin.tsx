@@ -171,3 +171,4 @@ export const CanteenLogin: React.FC = () => {
     </div>
   );
 };
+

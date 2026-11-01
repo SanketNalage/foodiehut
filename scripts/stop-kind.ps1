@@ -10,3 +10,4 @@ if ($env:PATH -notlike "*$binDir*") {
 Write-Host "Deleting KIND cluster 'foodiehut-cluster'..." -ForegroundColor Yellow
 & kind delete cluster --name foodiehut-cluster
 Write-Host "KIND cluster deleted." -ForegroundColor Green
+

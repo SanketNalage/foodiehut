@@ -21,3 +21,4 @@ public class OrderStatusUpdateRequest {
     public String getCancellationReason() { return cancellationReason; }
     public void setCancellationReason(String cancellationReason) { this.cancellationReason = cancellationReason; }
 }
+

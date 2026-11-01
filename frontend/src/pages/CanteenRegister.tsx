@@ -245,3 +245,4 @@ export const CanteenRegister: React.FC = () => {
     </div>
   );
 };
+

@@ -165,3 +165,4 @@ export const QrScannerModal: React.FC<Props> = ({ isOpen, onClose }) => {
     </div>
   );
 };
+

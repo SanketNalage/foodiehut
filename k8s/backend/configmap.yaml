@@ -11,3 +11,4 @@ data:
   DEFAULT_MOCK_OTP: "123456"
   FRONTEND_BASE_URL: "http://localhost"
   CORS_ALLOWED_ORIGINS: "http://localhost,http://localhost:80,http://localhost:30080,http://localhost:5173"
+

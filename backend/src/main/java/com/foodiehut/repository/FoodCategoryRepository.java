@@ -12,3 +12,4 @@ public interface FoodCategoryRepository extends JpaRepository<FoodCategory, Long
     Optional<FoodCategory> findByNameIgnoreCase(String name);
     List<FoodCategory> findByActiveTrue();
 }
+

@@ -82,3 +82,4 @@ export const QrCodeModal: React.FC<Props> = ({ isOpen, onClose, title, code, qrP
     </div>
   );
 };
+

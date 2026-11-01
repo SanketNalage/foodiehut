@@ -182,3 +182,4 @@ export const CartPage: React.FC = () => {
     </div>
   );
 };
+

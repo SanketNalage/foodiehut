@@ -35,3 +35,4 @@ Write-Host "  Frontend:    http://localhost:5173" -ForegroundColor Cyan
 Write-Host "  Backend API: http://localhost:8080" -ForegroundColor Cyan
 Write-Host "  Swagger UI:  http://localhost:8080/swagger-ui.html" -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Green
+

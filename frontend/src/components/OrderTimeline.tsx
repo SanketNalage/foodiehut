@@ -71,3 +71,4 @@ export const OrderTimeline: React.FC<Props> = ({ status, cancellationReason }) =
     </div>
   );
 };
+

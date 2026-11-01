@@ -48,3 +48,4 @@ public class OrderEventPublisher {
         messagingTemplate.convertAndSend(orderTopic, event);
     }
 }
+

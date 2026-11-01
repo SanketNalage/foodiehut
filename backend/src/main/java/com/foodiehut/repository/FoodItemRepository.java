@@ -14,3 +14,4 @@ public interface FoodItemRepository extends JpaRepository<FoodItem, Long> {
     List<FoodItem> findByCanteenIdAndCategoryIdAndActiveTrue(Long canteenId, Long categoryId);
     Optional<FoodItem> findByIdAndCanteenId(Long id, Long canteenId);
 }
+

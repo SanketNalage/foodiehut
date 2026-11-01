@@ -11,3 +11,4 @@ public interface OtpVerificationRepository extends JpaRepository<OtpVerification
     Optional<OtpVerification> findTopByContactOrderByCreatedAtDesc(String contact);
     void deleteByContact(String contact);
 }
+

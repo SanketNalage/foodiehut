@@ -27,3 +27,4 @@ public class CanteenAnalyticsDto {
     public BigDecimal getTodayRevenue() { return todayRevenue; }
     public void setTodayRevenue(BigDecimal todayRevenue) { this.todayRevenue = todayRevenue; }
 }
+

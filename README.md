@@ -232,3 +232,4 @@ powershell -ExecutionPolicy Bypass -File scripts\test-e2e.ps1 -BaseUrl "http://l
 - **SQL Injection Prevention**: Parameterized queries via Spring Data JPA and Hibernate.
 - **Single-Use Hashed OTPs**: BCrypt hashing with configurable expiration (300s), resend cooldown (30s), and attempt thresholds (5 max).
 - **CORS Configuration**: Configurable origins supporting localhost, Docker Compose, and KIND ports.
+

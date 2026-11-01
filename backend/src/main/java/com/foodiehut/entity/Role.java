@@ -5,3 +5,4 @@ public enum Role {
     ROLE_CANTEEN_OWNER,
     ROLE_ADMIN
 }
+

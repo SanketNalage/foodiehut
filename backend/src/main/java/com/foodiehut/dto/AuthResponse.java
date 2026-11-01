@@ -41,3 +41,4 @@ public class AuthResponse {
     public Object getProfile() { return profile; }
     public void setProfile(Object profile) { this.profile = profile; }
 }
+

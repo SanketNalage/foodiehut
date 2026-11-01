@@ -79,3 +79,4 @@ public class FoodController {
         return ResponseEntity.ok(ApiResponse.ok("Food item removed successfully.", null));
     }
 }
+

@@ -54,3 +54,4 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse("An unexpected server error occurred: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value()));
     }
 }
+

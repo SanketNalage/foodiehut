@@ -84,3 +84,4 @@ export const CanteenProfile: React.FC = () => {
     </div>
   );
 };
+
