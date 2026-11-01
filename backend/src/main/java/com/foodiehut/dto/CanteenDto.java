@@ -14,6 +14,7 @@ public class CanteenDto {
     private String address;
     private String qrCodeData;
     private boolean active;
+    private String mockOtp;
 
     public CanteenDto() {}
 
@@ -55,5 +56,7 @@ public class CanteenDto {
     public void setQrCodeData(String qrCodeData) { this.qrCodeData = qrCodeData; }
     public boolean isActive() { return active; }
     public void setActive(boolean active) { this.active = active; }
+    public String getMockOtp() { return mockOtp; }
+    public void setMockOtp(String mockOtp) { this.mockOtp = mockOtp; }
 }
 

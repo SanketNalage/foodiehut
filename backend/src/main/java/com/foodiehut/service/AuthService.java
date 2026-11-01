@@ -68,9 +68,11 @@ public class AuthService {
         student = studentRepository.save(student);
 
         // Pre-request OTP for verification
-        otpService.requestOtp(email, Role.ROLE_STUDENT);
+        String mockOtp = otpService.requestOtp(email, Role.ROLE_STUDENT);
 
-        return StudentDto.fromEntity(student);
+        StudentDto dto = StudentDto.fromEntity(student);
+        dto.setMockOtp(mockOtp);
+        return dto;
     }
 
     @Transactional
@@ -98,9 +100,11 @@ public class AuthService {
         canteen = canteenRepository.save(canteen);
 
         // Pre-request OTP for verification
-        otpService.requestOtp(email, Role.ROLE_CANTEEN_OWNER);
+        String mockOtp = otpService.requestOtp(email, Role.ROLE_CANTEEN_OWNER);
 
-        return CanteenDto.fromEntity(canteen);
+        CanteenDto dto = CanteenDto.fromEntity(canteen);
+        dto.setMockOtp(mockOtp);
+        return dto;
     }
 
     public String requestOtp(OtpRequestDto req) {

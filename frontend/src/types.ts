@@ -13,6 +13,7 @@ export interface Student {
   studentIdNumber: string;
   section: string;
   qrCodeData: string;
+  mockOtp?: string;
 }
 
 export interface Canteen {
@@ -27,6 +28,7 @@ export interface Canteen {
   address: string;
   qrCodeData: string;
   active: boolean;
+  mockOtp?: string;
 }
 
 export interface FoodCategory {

@@ -13,6 +13,7 @@ public class StudentDto {
     private String studentIdNumber;
     private String section;
     private String qrCodeData;
+    private String mockOtp;
 
     public StudentDto() {}
 
@@ -51,5 +52,7 @@ public class StudentDto {
     public void setSection(String section) { this.section = section; }
     public String getQrCodeData() { return qrCodeData; }
     public void setQrCodeData(String qrCodeData) { this.qrCodeData = qrCodeData; }
+    public String getMockOtp() { return mockOtp; }
+    public void setMockOtp(String mockOtp) { this.mockOtp = mockOtp; }
 }
 

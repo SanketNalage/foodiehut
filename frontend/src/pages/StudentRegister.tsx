@@ -29,14 +29,11 @@ export const StudentRegister: React.FC = () => {
     setLoading(true);
 
     try {
-      await api.registerStudent(formData);
-      // Now request OTP to verify
-      const mockOtp = await api.requestStudentOtp(formData.email);
+      const student = await api.registerStudent(formData);
       setIsVerifying(true);
-      if (mockOtp) {
-        setDevOtpHint(mockOtp);
-        setOtp(mockOtp);
-      }
+      const code = student.mockOtp || '123456';
+      setDevOtpHint(code);
+      setOtp(code);
     } catch (err: any) {
       setErrorMsg(err.message || 'Registration failed. Check your details.');
     } finally {

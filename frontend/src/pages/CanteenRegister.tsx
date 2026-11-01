@@ -29,13 +29,11 @@ export const CanteenRegister: React.FC = () => {
     setLoading(true);
 
     try {
-      await api.registerCanteen(formData);
-      const mockOtp = await api.requestCanteenOtp(formData.email);
+      const canteen = await api.registerCanteen(formData);
       setIsVerifying(true);
-      if (mockOtp) {
-        setDevOtpHint(mockOtp);
-        setOtp(mockOtp);
-      }
+      const code = canteen.mockOtp || '123456';
+      setDevOtpHint(code);
+      setOtp(code);
     } catch (err: any) {
       setErrorMsg(err.message || 'Canteen registration failed.');
     } finally {
