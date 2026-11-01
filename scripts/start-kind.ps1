@@ -1,7 +1,7 @@
 # scripts/start-kind.ps1
 # Complete KIND Kubernetes deployment workflow for Windows
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 $workspaceRoot = Split-Path -Parent $PSScriptRoot
 $binDir = Join-Path $workspaceRoot "bin"
 if ($env:PATH -notlike "*$binDir*") {
@@ -23,7 +23,7 @@ Write-Host "Docker is running: $dockerInfo" -ForegroundColor Green
 
 # 2. KIND Cluster check/creation
 Write-Host "`n[Step 2/7] Checking KIND cluster 'foodiehut-cluster'..." -ForegroundColor Yellow
-$clusters = kind get clusters 2>&1
+$clusters = & kind get clusters 2>$null
 if ($clusters -notcontains "foodiehut-cluster") {
     Write-Host "Creating KIND cluster with extraPortMappings..." -ForegroundColor Yellow
     $kindConfig = Join-Path $workspaceRoot "k8s\kind-config.yaml"
