@@ -1,0 +1,45 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: foodiehut-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:foodiehut}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DATABASE_USERNAME:foodiehut}
+    password: ${DATABASE_PASSWORD:foodiehut123}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        dialect: org.hibernate.dialect.MySQLDialect
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:FoodieHutSecureJwtKeyMustBeAtLeast256BitsLongForHmacSha256Security123!}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000} # 24 hours
+  otp:
+    provider: ${OTP_PROVIDER:mock}
+    default-mock-otp: ${DEFAULT_MOCK_OTP:123456}
+    expiry-seconds: 300
+    resend-cooldown-seconds: 30
+    max-attempts: 5
+  frontend:
+    base-url: ${FRONTEND_BASE_URL:http://localhost:5173}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000,http://localhost:80,http://127.0.0.1:5173}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method

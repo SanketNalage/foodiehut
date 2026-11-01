@@ -1,0 +1,30 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:foodiehut_test;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+app:
+  jwt:
+    secret: FoodieHutSecureJwtKeyMustBeAtLeast256BitsLongForHmacSha256Security123!
+    expiration-ms: 86400000
+  otp:
+    provider: mock
+    default-mock-otp: 123456
+    expiry-seconds: 300
+    resend-cooldown-seconds: 30
+    max-attempts: 5
+  frontend:
+    base-url: http://localhost:5173
+  cors:
+    allowed-origins: "*"

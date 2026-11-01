@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: foodiehut
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: foodiehut-backend:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+        envFrom:
+        - configMapRef:
+            name: backend-config
+        - secretRef:
+            name: backend-secret
+        resources:
+          requests:
+            cpu: 200m
+            memory: 384Mi
+          limits:
+            cpu: 1000m
+            memory: 768Mi
+        startupProbe:
+          httpGet:
+            path: /v3/api-docs
+            port: 8080
+          failureThreshold: 30
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /v3/api-docs
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /v3/api-docs
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10

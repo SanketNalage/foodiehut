@@ -1,0 +1,12 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: foodiehut-cluster
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 30080
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 30880
+    hostPort: 8080
+    protocol: TCP
